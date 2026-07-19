@@ -1,0 +1,38 @@
+{
+  "goal": "Run a mixed-provider council loop over this repository.",
+  "maxIterations": 3,
+  "dashboard": { "host": "127.0.0.1", "port": 8787 },
+  "safety": {
+    "stepPolicy": "one-small-reversible-step",
+    "destructiveActions": "require-human-approval",
+    "secrets": "never-request-or-print"
+  },
+  "agents": {
+    "council": [
+      {
+        "id": "codex-architect",
+        "type": "command",
+        "persona": "Codex architecture reviewer",
+        "command": ["sh", "-lc", "printf '%s\\n' 'Replace with codex exec reviewer command'"]
+      },
+      {
+        "id": "claude-security",
+        "type": "command",
+        "persona": "Claude Code security reviewer",
+        "command": ["sh", "-lc", "printf '%s\\n' 'Replace with claude-code reviewer command'"]
+      },
+      {
+        "id": "hermes-maintainer",
+        "type": "command",
+        "persona": "Hermes maintainer reviewer",
+        "command": ["sh", "-lc", "printf '%s\\n' 'Replace with hermes reviewer command'"]
+      }
+    ],
+    "implementer": {
+      "id": "openclaw-implementer",
+      "type": "command",
+      "persona": "OpenClaw implementation agent",
+      "command": ["sh", "-lc", "printf '%s\\n' 'Replace with openclaw implementer command'"]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+:root {
+  color-scheme: dark;
+  --bg: #080a12;
+  --panel: rgba(255,255,255,0.07);
+  --panel2: rgba(255,255,255,0.105);
+  --line: rgba(255,255,255,0.14);
+  --text: #edf2ff;
+  --muted: #9aa8c7;
+  --accent: #8b5cf6;
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --amber: #f59e0b;
+  --rose: #fb7185;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(139,92,246,.34), transparent 32%),
+    radial-gradient(circle at 86% 3%, rgba(34,211,238,.22), transparent 28%),
+    radial-gradient(circle at 50% 120%, rgba(52,211,153,.14), transparent 40%),
+    linear-gradient(180deg, #080a12 0%, #111827 100%);
+  color: var(--text);
+  font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.shell { width: min(1220px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+.hero { display:flex; align-items:flex-start; justify-content:space-between; gap: 24px; padding: 30px; border:1px solid var(--line); border-radius: 32px; background: linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,.045)); box-shadow: 0 24px 90px rgba(0,0,0,.42); position:relative; overflow:hidden; }
+.hero:after { content:""; position:absolute; inset:auto -12% -50% 35%; height:220px; background:linear-gradient(90deg, transparent, rgba(34,211,238,.18), transparent); transform:rotate(-8deg); }
+.eyebrow { margin:0 0 6px; text-transform:uppercase; letter-spacing:.18em; color: var(--cyan); font-size: 12px; }
+h1 { margin:0; font-size: clamp(40px, 7vw, 82px); letter-spacing:-.07em; line-height:.92; }
+h2 { margin:0 0 14px; font-size:16px; color:#dbe7ff; }
+.goal { max-width: 780px; margin: 14px 0 0; color: var(--muted); font-size: 16px; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+.chips span { border:1px solid var(--line); border-radius:999px; padding:6px 10px; color:#c7d2fe; background:rgba(0,0,0,.18); }
+.metrics { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:16px; }
+.metrics article { padding:16px 18px; border:1px solid var(--line); border-radius:20px; background:var(--panel); }
+.metrics b { display:block; font-size:24px; letter-spacing:-.04em; color:white; }
+.metrics span, .muted { color:var(--muted); }
+.grid { display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 16px; margin-top: 16px; }
+.card { margin-top: 16px; padding: 18px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); backdrop-filter: blur(18px); }
+.state-card pre { max-height: 330px; }
+.graph-card { min-height: 400px; }
+pre { overflow:auto; margin:0; white-space:pre-wrap; color:#cbd5e1; }
+button { border:1px solid rgba(255,255,255,.18); color:white; background:linear-gradient(135deg, var(--accent), #2563eb); padding: 11px 15px; border-radius: 14px; cursor:pointer; font-weight:800; box-shadow: 0 10px 30px rgba(37,99,235,.25); }
+button:hover { filter:brightness(1.08); transform: translateY(-1px); }
+.comment-box { display:flex; gap: 10px; margin-top: 10px; }
+input { flex:1; border:1px solid var(--line); border-radius:14px; background:rgba(0,0,0,.25); color:var(--text); padding: 12px; outline:none; }
+.timeline { display:grid; gap: 10px; }
+.event { padding: 13px; border:1px solid var(--line); border-left: 4px solid var(--muted); border-radius: 16px; background: var(--panel2); }
+.event.council { border-left-color: var(--accent); }
+.event.implementation { border-left-color: var(--cyan); }
+.event.review { border-left-color: var(--green); }
+.event.human { border-left-color: var(--amber); }
+.event .type { color: var(--cyan); font-weight:800; }
+.event .ts { color: var(--muted); font-size:12px; }
+.event p { color:#dbeafe; margin: 8px 0; }
+.event pre { margin-top: 8px; font-size:12px; max-height: 150px; }
+.node { fill: rgba(139,92,246,.25); stroke: rgba(255,255,255,.66); stroke-width:1.5; filter: drop-shadow(0 8px 16px rgba(0,0,0,.24)); }
+.node.impl { fill: rgba(34,211,238,.23); }
+.node.done { fill: rgba(52,211,153,.2); }
+.node.council { fill: rgba(139,92,246,.32); }
+.node.review { fill: rgba(52,211,153,.24); }
+.edge { stroke: rgba(255,255,255,.35); stroke-width: 2; }
+.label { fill:#e0f2fe; font-size: 12px; text-anchor: middle; font-weight:700; }
+@media (max-width: 880px) { .hero, .grid, .metrics { grid-template-columns: 1fr; display:grid; } .comment-box { flex-direction:column; } }

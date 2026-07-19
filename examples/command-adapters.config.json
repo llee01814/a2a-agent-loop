@@ -1,0 +1,24 @@
+{
+  "goal": "Improve this repository safely with real CLI agents.",
+  "maxIterations": 2,
+  "dashboard": { "host": "127.0.0.1", "port": 8787 },
+  "agents": {
+    "council": [
+      {
+        "id": "architect",
+        "type": "command",
+        "command": ["echo", "architect placeholder: replace with claude/codex/openclaw/hermes command"]
+      },
+      {
+        "id": "security",
+        "type": "command",
+        "command": ["echo", "security placeholder: replace with a reviewer agent command"]
+      }
+    ],
+    "implementer": {
+      "id": "implementer",
+      "type": "command",
+      "command": ["echo", "implementer placeholder: replace with a coding agent command"]
+    }
+  }
+}

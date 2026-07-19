@@ -1,0 +1,13 @@
+{
+  "goal": "Improve this repository safely with a council-reviewed loop.",
+  "maxIterations": 3,
+  "dashboard": { "host": "127.0.0.1", "port": 8787 },
+  "agents": {
+    "council": [
+      { "id": "architect", "type": "mock", "persona": "systems architect" },
+      { "id": "security", "type": "mock", "persona": "security reviewer" },
+      { "id": "maintainer", "type": "mock", "persona": "open-source maintainer" }
+    ],
+    "implementer": { "id": "implementer", "type": "mock", "persona": "careful implementation agent" }
+  }
+}

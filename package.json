@@ -1,0 +1,22 @@
+{
+  "name": "a2a-agent-loop",
+  "version": "0.2.0",
+  "description": "Local-first A2A council loop for Codex, Claude Code, OpenClaw, Hermes, and command-line agents.",
+  "type": "module",
+  "bin": {
+    "a2a-agent-loop": "./bin/a2a-agent-loop.js",
+    "a2a-loop": "./bin/a2a-agent-loop.js"
+  },
+  "scripts": {
+    "start": "node ./bin/a2a-agent-loop.js start",
+    "demo": "node ./bin/a2a-agent-loop.js start --demo --once",
+    "demo:dashboard": "node ./bin/a2a-agent-loop.js start --demo --max-iterations 3 --hold-dashboard",
+    "test": "node --test",
+    "check": "node --check ./bin/a2a-agent-loop.js && node --check ./src/loop.js && node --check ./src/server.js && node --check ./src/agent.js && node --check ./src/store.js && node --check ./src/config.js && node --check ./src/presets.js && node --check ./public/app.js"
+  },
+  "keywords": ["a2a", "agent-to-agent", "multi-agent", "council", "agent-loop", "codex", "claude-code", "openclaw", "hermes", "dashboard"],
+  "author": "llee01814",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "files": ["bin", "src", "public", "docs", "examples", "LICENSE", "README.md"]
+}

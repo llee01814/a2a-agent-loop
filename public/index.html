@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A2A Agent Loop</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%238b5cf6'/%3E%3Cpath d='M18 34h28M24 24h16M24 44h16' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">v0.2 · local-first council loop</p>
+        <h1>A2A Agent Loop</h1>
+        <p id="goal" class="goal">Waiting for a run…</p>
+        <div class="chips">
+          <span>Codex</span><span>Claude Code</span><span>OpenClaw</span><span>Hermes</span><span>A2A HTTP</span>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="stop">Stop loop</button>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article><b id="metric-status">—</b><span>Status</span></article>
+      <article><b id="metric-iteration">—</b><span>Iteration</span></article>
+      <article><b id="metric-events">—</b><span>Events</span></article>
+      <article><b id="metric-phase">—</b><span>Phase</span></article>
+    </section>
+
+    <section class="grid">
+      <article class="card state-card">
+        <h2>Run state</h2>
+        <pre id="state">{}</pre>
+      </article>
+      <article class="card graph-card">
+        <h2>Live branch graph</h2>
+        <svg id="graph" viewBox="0 0 980 360" role="img" aria-label="Agent loop branch graph"></svg>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Join the council</h2>
+      <p class="muted">Human comments are appended to the audit log so the council can be steered without killing the run.</p>
+      <div class="comment-box">
+        <input id="comment" placeholder="Add a human comment to the council…" />
+        <button id="send-comment">Send</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Timeline</h2>
+      <div id="timeline" class="timeline"></div>
+    </section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
